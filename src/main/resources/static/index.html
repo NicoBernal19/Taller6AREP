@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Real Estate Properties</h1>
+
+    <form id="propertyForm">
+        <input type="hidden" id="propertyId">
+        <label for="address">Address:</label>
+        <input type="text" id="address" placeholder="Enter address" required>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" placeholder="Enter price" required>
+
+        <label for="size">Size:</label>
+        <input type="number" id="size" placeholder="Enter size" required>
+
+        <label for="description">Description:</label>
+        <input id="description" placeholder="Enter description" required>
+
+        <button type="submit" class="save">Save Property</button>
+    </form>
+
+    <div class="table-container">
+        <h2>Properties List</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Address</th>
+                <th>Price</th>
+                <th>Size</th>
+                <th>Description</th>
+                <th>Edit/Delete Property</th>
+            </tr>
+            </thead>
+            <tbody id="propertyList"></tbody>
+        </table>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
