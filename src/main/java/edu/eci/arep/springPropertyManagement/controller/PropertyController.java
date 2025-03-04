@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/properties")
-@CrossOrigin("*")
+//@CrossOrigin("*")
 public class PropertyController {
     private final PropertyService service;
 
@@ -39,5 +39,15 @@ public class PropertyController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         service.deleteProperty(id);
+    }
+
+    @GetMapping("/search")
+    public List<Property> searchProperties(
+            @RequestParam(required = false) String address,
+            @RequestParam(required = false) Double minPrice,
+            @RequestParam(required = false) Double maxPrice,
+            @RequestParam(required = false) Integer minSize,
+            @RequestParam(required = false) Integer maxSize) {
+        return service.searchProperties(address, minPrice, maxPrice, minSize, maxSize);
     }
 }

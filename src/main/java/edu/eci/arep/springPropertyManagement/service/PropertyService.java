@@ -39,4 +39,8 @@ public class PropertyService {
     public void deleteProperty(Long id) {
         repository.deleteById(id);
     }
+
+    public List<Property> searchProperties(String address, Double minPrice, Double maxPrice, Integer minSize, Integer maxSize) {
+        return repository.searchProperties(address, minPrice, maxPrice, minSize, maxSize);
+    }
 }

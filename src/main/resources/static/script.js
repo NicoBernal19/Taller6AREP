@@ -54,6 +54,48 @@ async function fetchProperties() {
     });
 }
 
+document.getElementById("searchForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const address = document.getElementById("searchAddress").value;
+    const minPrice = document.getElementById("searchMinPrice").value;
+    const maxPrice = document.getElementById("searchMaxPrice").value;
+    const minSize = document.getElementById("searchMinSize").value;
+    const maxSize = document.getElementById("searchMaxSize").value;
+
+    let queryParams = new URLSearchParams();
+    if (address) queryParams.append("address", address);
+    if (minPrice) queryParams.append("minPrice", minPrice);
+    if (maxPrice) queryParams.append("maxPrice", maxPrice);
+    if (minSize) queryParams.append("minSize", minSize);
+    if (maxSize) queryParams.append("maxSize", maxSize);
+
+    const response = await fetch(`${apiUrl}/search?${queryParams.toString()}`);
+    const properties = await response.json();
+
+    displayProperties(properties);
+});
+
+function displayProperties(properties) {
+    const tableBody = document.getElementById("propertyList");
+    tableBody.innerHTML = "";
+
+    properties.forEach(property => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+        <td>${property.address}</td>
+        <td>$${property.price}</td>
+        <td>${property.size} m²</td>
+        <td>${property.description}</td>
+        <td>
+            <button class="edit" onclick="editProperty(${property.id}, '${property.address}', ${property.price}, ${property.size}, '${property.description}')">Edit</button>
+            <button class="delete" onclick="deleteProperty(${property.id})">Delete</button>
+        </td>
+    `;
+        tableBody.appendChild(row);
+    });
+}
+
 async function deleteProperty(id) {
     if (confirm("Are you sure you want to delete this property?")) {
         await fetch(`${apiUrl}/${id}`, { method: "DELETE" });
