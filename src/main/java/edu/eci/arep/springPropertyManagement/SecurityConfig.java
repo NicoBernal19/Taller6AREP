@@ -25,10 +25,10 @@ public class SecurityConfig {
                 .cors(withDefaults()) // Habilitar CORS
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/public/**").permitAll()
+                        .requestMatchers("/api/**").permitAll()
                         .anyRequest().authenticated()
-                )
-                .httpBasic(withDefaults());
+                );
+//                .httpBasic(withDefaults());
         return http.build();
     }
 

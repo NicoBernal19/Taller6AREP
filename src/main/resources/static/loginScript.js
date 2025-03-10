@@ -14,7 +14,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
         });
 
         if (response.ok) {
-            localStorage.setItem("isAuthenticated", "true");
+            sessionStorage.setItem("isAuthenticated", "true");
             window.location.href = "index.html";
         } else {
             document.getElementById("message").textContent = "Usuario o contraseña incorrectos.";
