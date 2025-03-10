@@ -5,12 +5,12 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
     const password = document.getElementById("password").value;
 
     try {
-        const response = await fetch("https://localhost:8443/api/public/login", {
+        const response = await fetch("https://ec2-18-212-209-232.compute-1.amazonaws.com:8443/api/public/login", {
             method: "POST",
             headers: {
-                "Authorization": "Basic " + btoa(username + ":" + password),
                 "Content-Type": "application/json"
-            }
+            },
+            body: JSON.stringify({ username, password })
         });
 
         if (response.ok) {

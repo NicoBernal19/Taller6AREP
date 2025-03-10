@@ -1,4 +1,4 @@
-const apiUrl = "https://localhost:8443/api/properties";
+const apiUrl = "https://ec2-18-212-209-232.compute-1.amazonaws.com:8443/api/properties";
 
 document.addEventListener("DOMContentLoaded", fetchProperties);
 
