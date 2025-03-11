@@ -69,15 +69,6 @@ button {
     background-color: #c9302c;
 }
 
-.changePage {
-    background-color: #2c2b2b;
-    color: white;
-}
-
-.changePage:hover {
-    background-color: #0c0000;
-}
-
 form {
     display: flex;
     flex-direction: column;
@@ -126,10 +117,85 @@ table tr:hover {
     background-color: #ddd;
 }
 
-#pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    gap: 10px;
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container h2 {
+    color: #93062d;
+    margin-bottom: 20px;
+}
+
+.login-container .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.login-container .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-container .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0a75ec;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+    background-color: #0965cf;
+}
+
+.login-container #toggleForm {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+.login-container #toggleForm a {
+    color: #0a75ec;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.login-container #toggleForm a:hover {
+    color: #0965cf;
+    text-decoration: underline;
+}
+
+.login-container #message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #d9534f;
+}
+
+.login-container #registerForm {
+    display: none;
+}
+
+.login-container #registerForm.active {
+    display: block;
 }
