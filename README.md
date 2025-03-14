@@ -34,15 +34,25 @@ En este caso el sistema sigue una arquitectura de tres capas:
 
 ## Diseño de Clases
 
-Modelo: Property → Representa la propiedad en la base de datos.
+#### Modelo: 
+Property → Representa una propiedad en la base de datos.
 
-Repositorio: PropertyRepository → Accede a los datos con JPA/Hibernate.
+User → Representa un usuario en la base de datos.
 
-Servicio: PropertyService → Contiene la lógica de negocio.
+#### Repositorio: 
+PropertyRepository → Accede a los datos de las propiedades con JPA/Hibernate.
 
-Controlador: PropertyController → Expone los endpoints REST.
+UserRepository → Accede a los datos de los usuarios utilizando JPA/Hibernate.
 
-Este diseño sigue una arquitectura MVC (Modelo-Vista-Controlador) y usa Spring Boot con JPA/Hibernate para la gestión de datos.
+#### Servicio: 
+PropertyService → Contiene la lógica de negocio relacionada con las propiedades.
+
+UserService → Implementa la lógica de negocio relacionada con los usuarios, incluyendo el registro de nuevos usuarios y la autenticación.
+
+#### Controlador: 
+PropertyController → Expone los endpoints REST para todo el manejo y la gestion de las propiedades.
+
+AuthController → Expone los endpoints REST para gestionar la autenticación y el registro de usuarios.
 
 ## Funcionalidades del servidor
 
