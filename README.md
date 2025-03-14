@@ -1,11 +1,13 @@
-# SISTEMA CRUD PARA MANEJAR PROPIEDADES
+# DISEÑOS APLICACION SEGURA
 
-Este proyecto consiste en el desarrollo de un sistema CRUD (Crear, Leer, Actualizar, Eliminar) para la gestión de propiedades inmobiliarias. El objetivo es construir una aplicación web sencilla que permita a los usuarios realizar las siguientes operaciones sobre los listados de propiedades:
+Este proyecto consiste en el desarrollo de una aplicacion web segura para la gestión de propiedades inmobiliarias. El objetivo es construir una aplicación web sencilla que permita a los usuarios realizar las siguientes operaciones sobre los listados de propiedades:
 
 - Crear nuevos listados de propiedades.
 - Leer y visualizar la lista completa de propiedades, así como los detalles de cada una.
 - Actualizar la información de una propiedad existente.
 - Eliminar listados de propiedades.
+
+Ademas de implementar autenticacion de usuarios segura, encripcion TLS y demas practicas seguras.
 
 ## Autor
 
@@ -18,49 +20,17 @@ Este proyecto consiste en el desarrollo de un sistema CRUD (Crear, Leer, Actuali
 - AWS
 - Spring Boot
 - MySQL
+- Certbot
 
-## Funcionalidades del servidor
-
-El código está estructurado en diferentes clases y paquetes para no tener una sola clase llena de codigo, ademas de que es una buena practica y permite que todo este mas ordenado y compacto, hace que sea mas facil extender a posterior el codigo.
-
-Entre las funcionalidades que se ofrecen encontramos las siguientes:
-
-- Permite crear y administrar propiedades.
-- Cuenta con la funcion de busqueda por medio de filtros (precio, tamaño, direccion).
-- Despliegue en la nube con AWS.
-- Interfaz de usuario amigable para el usuario.
-
-## Estructura del Proyecto
-
-```
-│──  src
-│   ├──  main
-│   │   ├──  java
-│   │   │   └──  co.edu.eci.arep.springPropertyManagement
-│   │   │       ├──  controller
-│   │   │       │   ├── PropertyController.java
-│   │   │       ├──  model
-│   │   │       │   ├── Property.java
-│   │   │       ├── repository
-│   │   │       │   ├── PropertyRepository.java
-│   │   │       ├── service
-│   │   │       │   ├── PropertyService.java
-│   │   │       ├── SpringPropertyManagementApplication.java
-│   │   ├──  resources
-│   │   │   ├──  static
-│   │   │   │   ├── index.html
-│   │   │   │   ├── script.js
-│   │   │   │   ├── styles.css
-│   │   │   ├──  application.properties
-```
-
-## Arquitectura del Sistema
+## Arquitectura de la aplicacion
 
 En este caso el sistema sigue una arquitectura de tres capas:
 
-- Frontend: Interfaz gráfica con la que interactúan los usuarios. Se uso HTML, CSS, JavaScript.
-- Backend: Procesa las solicitudes del frontend, maneja la lógica de negocio y se comunica con la base de datos. Usando JPA/Hibernate logra comunicarse con la base.
-- Database: Almacena y gestionr la información de las propiedades inmobiliarias con MySQL. La tabla principal es properties, que almacena los datos de las propiedades. Hibernate genera las tablas automáticamente.
+- Frontend: Interfaz gráfica del cliente, con la cual los usuarios pueden interactuar con los servicios ofrecidos por el back, en esta instancia unicamente se guardaron los archivos estaticos (html,css,js). El frontend se desplego en una instancia Ubuntu con apache instalado y configurado.
+  
+- Backend: Procesa las solicitudes del frontend y el tema de la autenticacion segura, maneja la lógica de negocio y se comunica con la base de datos. Usando JPA/Hibernate logra comunicarse con la base. El backend se desplego en una instancia Ubuntu con java instalado.
+  
+- Database: Almacena y gestionr la información de las propiedades inmobiliarias con MySQL. La tabla principal es properties, que almacena los datos de las propiedades, tambien posee otra tabla llamada users, en donde se guarda las credenciales de los usuarios incluidas las claves. Hibernate genera las tablas automáticamente. La base de datos se desplego en una instancia Amazon Linux, con MySQL instalado y configurado.
 
 ## Diseño de Clases
 
@@ -73,6 +43,23 @@ Servicio: PropertyService → Contiene la lógica de negocio.
 Controlador: PropertyController → Expone los endpoints REST.
 
 Este diseño sigue una arquitectura MVC (Modelo-Vista-Controlador) y usa Spring Boot con JPA/Hibernate para la gestión de datos.
+
+## Funcionalidades del servidor
+
+El código está estructurado en diferentes clases y paquetes para no tener una sola clase llena de codigo, ademas de que es una buena practica y permite que todo este mas ordenado y compacto, hace que sea mas facil extender a posterior el codigo.
+
+Entre las funcionalidades que se ofrecen encontramos las siguientes:
+
+- Permite crear y administrar propiedades (editar, borrar).
+- Cuenta con la funcion de busqueda por medio de filtros (precio, tamaño, direccion).
+- Despliegue en la nube con AWS.
+- Cuenta con un sistema de login y registro facil y rapido, pero tambien seguro.
+
+## Funcionalidades claves de seguridad
+
+- Encripcion TLS: Las comunicaciones entre back y front estan configuradas para funcionar con HTTPS.
+- Autenticacion de usuarios: La aplicacion tiene implementado un login y registro seguro para los usuarios, en donde las contraseñas se "hashean" con BCrypt antes de almacenarlas.
+- Manejo de certificados Let's Encrypt: Se generaron certificados TLS a partir de Let's Encrypt para el back y front.
 
 ## Despliegue en AWS
 
