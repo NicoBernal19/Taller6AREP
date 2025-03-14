@@ -161,4 +161,8 @@ A continuacion se encuentran capturas del funcionamiento de la aplicacion ya des
 
 ### Video del Despliegue en AWS
 
+https://github.com/user-attachments/assets/dbef03b3-2a6f-480a-9009-7e61c6d595d3
 
+Puedes descargar el video aqui por si no se esta viendo:
+
+![video](src/main/resources/imagenesReadMe/securityAws.mp4)
