@@ -95,17 +95,17 @@ Si es necesario (en mi caso lo fue) debemos ir al security group de la instancia
 
 Una vez hecho eso ya la base de datos quedo correctamente desplegada.
 
-### Despliegue de la aplicacion
+### Despliegue del backend
 
-Debemos crear una instancia en AWS. Una vez ya tengamos esto vamos a acceder a la maquina virtual, para hacerlo yo use PuTTy.
-
-
-
-Dentro de la maquina virtual vamos a instalar Java, en este caso el 17:
+Debemos crear una instancia en AWS. Una vez ya tengamos esto vamos a acceder a la maquina virtual por medio de consola.
 
 
 
-Luego debemos subir el .jar de la aplicacion a la maquina virtual, para eso vamos a usar una consola y usamos el siguiente comando:
+Dentro de la maquina virtual vamos a instalar Java, en este caso el 21:
+
+
+
+Luego debemos subir el .jar y el archivo de application.properties de la aplicacion a la maquina virtual, para eso vamos a usar una consola y usamos el siguiente comando:
 
 
 
@@ -118,6 +118,31 @@ Si es necesario (en mi caso lo fue) debemos ir al security group de la instancia
 Una vez hecho eso ya la aplicacion quedo correctamente desplegada, ademas esta ya quedo conectada a la base de datos gracias al archivo de application.properties
 
 A continuacion se encuentran capturas del funcionamiento de la aplicacion ya desplegada:
+
+### Despliegue del frontend
+
+Debemos crear una instancia en AWS. Una vez ya tengamos esto vamos a acceder a la maquina virtual por medio de consola.
+
+
+
+Dentro de la maquina virtual vamos a instalar apache:
+
+Debemos habilitar e iniciar el servicio:
+
+Tambien vamos a instalar certbot para el manejo de los certificados de let's encrypt:
+
+Luego debemos subir los archivos estaticos (.html, .js, .css) de la aplicacion a la maquina virtual, para eso vamos a usar una consola y usamos el siguiente comando:
+
+
+
+Una vez ya tenemos estos archivos en la maquina, en el directorio /var/www/html, el front ya va a estar corriendo.
+
+Si es necesario (en mi caso lo fue) debemos ir al security group de la instancia de AWS que estamos utilizando y debemos ajustar las reglas de entrada para que permita navegar correctamente por el servidor.
+
+### Imagenes del front-back-database ya desplegados y funcionando
+
+A continuacion se encuentran capturas del funcionamiento de la aplicacion ya desplegada:
+
 
 ### Video del Despliegue en AWS
 
