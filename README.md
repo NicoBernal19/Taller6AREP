@@ -93,7 +93,7 @@ Tambien vamos a instalar certbot para el manejo de los certificados de let's enc
 
 ![imagen](src/main/resources/imagenesReadMe/15.jpg)
 
-Luego debemos subir los archivos estaticos (.html, .js, .css) de la aplicacion a la maquina virtual, para eso vamos a usar una consola y usamos el siguiente comando:
+Luego debemos subir los archivos estaticos (.html, .js, .css) de la aplicacion a la maquina virtual, para eso vamos a usar una consola y scp.
 
 ![imagen](src/main/resources/imagenesReadMe/16.jpg)
 
@@ -109,8 +109,7 @@ Dentro de la maquina virtual vamos a instalar Java, en este caso el 21:
 
 ![imagen](src/main/resources/imagenesReadMe/17.jpg)
 
-Luego debemos subir el .jar y el archivo de application.properties de la aplicacion a la maquina virtual, para eso vamos a usar una consola y usamos el siguiente comando:
-
+Luego debemos subir el .jar y el archivo de application.properties de la aplicacion a la maquina virtual, para eso vamos a usar una consola y scp.
 
 Una vez ya tenemos el .jar en la maquina, solo debemos ejecutarlo, para que la aplicacion comienze a correr.
 
