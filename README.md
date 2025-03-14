@@ -80,25 +80,21 @@ Este diseño sigue una arquitectura MVC (Modelo-Vista-Controlador) y usa Spring 
 
 Debemos crear una instancia en AWS. Una vez ya tengamos esto vamos a acceder a la maquina virtual, para hacerlo yo use PuTTy.
 
-![image](https://github.com/user-attachments/assets/65bed5ad-ac35-494c-a382-1c1385376662)
 
-![image](https://github.com/user-attachments/assets/dcb77ee7-6c4f-457c-b24d-c48f6c439eaa)
 
 Dentro de la maquina virtual vamos a instalar MySQL:
 
-![image](https://github.com/user-attachments/assets/811a0bd8-7642-4f65-bcd4-de1734e58ce6)
 
-![image](https://github.com/user-attachments/assets/f2416879-ee5a-4ec5-904f-9f38389be57a)
 
 Luego debemos iniciar y habilitar el servicio:
 
-![image](https://github.com/user-attachments/assets/b4cb296c-3998-48c2-b5b5-79f5a5afbced)
+
 
 Luego realizamos toda la configuracion lo que incluye crear una nueva clave entre otras cosas:
 
 Si es necesario (en mi caso lo fue) debemos ir al security group de la instancia de AWS que estamos utilizando y debemos ajustar las reglas de entrada para que permita navegar correctamente por el servidor.
 
-![image](https://github.com/user-attachments/assets/6975312b-5c49-40fa-8d56-5f889ba73812)
+
 
 Una vez hecho eso ya la base de datos quedo correctamente desplegada.
 
@@ -106,25 +102,21 @@ Una vez hecho eso ya la base de datos quedo correctamente desplegada.
 
 Debemos crear una instancia en AWS. Una vez ya tengamos esto vamos a acceder a la maquina virtual, para hacerlo yo use PuTTy.
 
-![image](https://github.com/user-attachments/assets/65bed5ad-ac35-494c-a382-1c1385376662)
 
-![image](https://github.com/user-attachments/assets/dcb77ee7-6c4f-457c-b24d-c48f6c439eaa)
 
 Dentro de la maquina virtual vamos a instalar Java, en este caso el 17:
 
-![image](https://github.com/user-attachments/assets/811a0bd8-7642-4f65-bcd4-de1734e58ce6)
 
-![image](https://github.com/user-attachments/assets/f2416879-ee5a-4ec5-904f-9f38389be57a)
 
 Luego debemos subir el .jar de la aplicacion a la maquina virtual, para eso vamos a usar una consola y usamos el siguiente comando:
 
-![image](https://github.com/user-attachments/assets/b4cb296c-3998-48c2-b5b5-79f5a5afbced)
+
 
 Una vez ya tenemos el .jar en la maquina, solo debemos ejecutarlo, para que la aplicacion comienze a correr.
 
 Si es necesario (en mi caso lo fue) debemos ir al security group de la instancia de AWS que estamos utilizando y debemos ajustar las reglas de entrada para que permita navegar correctamente por el servidor.
 
-![image](https://github.com/user-attachments/assets/6975312b-5c49-40fa-8d56-5f889ba73812)
+
 
 Una vez hecho eso ya la aplicacion quedo correctamente desplegada, ademas esta ya quedo conectada a la base de datos gracias al archivo de application.properties
 
@@ -132,4 +124,4 @@ A continuacion se encuentran capturas del funcionamiento de la aplicacion ya des
 
 ### Video del Despliegue en AWS
 
-https://github.com/user-attachments/assets/90dd0e4a-b0eb-48ca-bc40-518c480534f4
+
