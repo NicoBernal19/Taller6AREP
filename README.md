@@ -1,4 +1,4 @@
-# DISEÑOS APLICACION SEGURA
+# DISEÑO APLICACION SEGURA
 
 Este proyecto consiste en el desarrollo de una aplicacion web segura para la gestión de propiedades inmobiliarias. El objetivo es construir una aplicación web sencilla que permita a los usuarios realizar las siguientes operaciones sobre los listados de propiedades:
 
@@ -73,76 +73,92 @@ Entre las funcionalidades que se ofrecen encontramos las siguientes:
 
 ## Despliegue en AWS
 
-### Despliegue de la Base de Datos
-
-Debemos crear una instancia en AWS. Una vez ya tengamos esto vamos a acceder a la maquina virtual, para hacerlo yo use PuTTy.
-
-
-
-Dentro de la maquina virtual vamos a instalar MySQL:
-
-
-
-Luego debemos iniciar y habilitar el servicio:
-
-
-
-Luego realizamos toda la configuracion lo que incluye crear una nueva clave entre otras cosas:
-
-Si es necesario (en mi caso lo fue) debemos ir al security group de la instancia de AWS que estamos utilizando y debemos ajustar las reglas de entrada para que permita navegar correctamente por el servidor.
-
-
-
-Una vez hecho eso ya la base de datos quedo correctamente desplegada.
-
-### Despliegue del backend
-
-Debemos crear una instancia en AWS. Una vez ya tengamos esto vamos a acceder a la maquina virtual por medio de consola.
-
-
-
-Dentro de la maquina virtual vamos a instalar Java, en este caso el 21:
-
-
-
-Luego debemos subir el .jar y el archivo de application.properties de la aplicacion a la maquina virtual, para eso vamos a usar una consola y usamos el siguiente comando:
-
-
-
-Una vez ya tenemos el .jar en la maquina, solo debemos ejecutarlo, para que la aplicacion comienze a correr.
-
-Si es necesario (en mi caso lo fue) debemos ir al security group de la instancia de AWS que estamos utilizando y debemos ajustar las reglas de entrada para que permita navegar correctamente por el servidor.
-
-
-
-Una vez hecho eso ya la aplicacion quedo correctamente desplegada, ademas esta ya quedo conectada a la base de datos gracias al archivo de application.properties
-
-A continuacion se encuentran capturas del funcionamiento de la aplicacion ya desplegada:
-
 ### Despliegue del frontend
 
 Debemos crear una instancia en AWS. Una vez ya tengamos esto vamos a acceder a la maquina virtual por medio de consola.
 
-
-
 Dentro de la maquina virtual vamos a instalar apache:
+
+![imagen](src/main/resources/imagenesReadMe/11.jpg)
 
 Debemos habilitar e iniciar el servicio:
 
+![imagen](src/main/resources/imagenesReadMe/12.jpg)
+
+![imagen](src/main/resources/imagenesReadMe/13.jpg)
+
 Tambien vamos a instalar certbot para el manejo de los certificados de let's encrypt:
+
+![imagen](src/main/resources/imagenesReadMe/14.jpg)
+
+![imagen](src/main/resources/imagenesReadMe/15.jpg)
 
 Luego debemos subir los archivos estaticos (.html, .js, .css) de la aplicacion a la maquina virtual, para eso vamos a usar una consola y usamos el siguiente comando:
 
-
+![imagen](src/main/resources/imagenesReadMe/16.jpg)
 
 Una vez ya tenemos estos archivos en la maquina, en el directorio /var/www/html, el front ya va a estar corriendo.
 
 Si es necesario (en mi caso lo fue) debemos ir al security group de la instancia de AWS que estamos utilizando y debemos ajustar las reglas de entrada para que permita navegar correctamente por el servidor.
 
+### Despliegue del backend
+
+Debemos crear una instancia en AWS. Una vez ya tengamos esto vamos a acceder a la maquina virtual por medio de consola.
+
+Dentro de la maquina virtual vamos a instalar Java, en este caso el 21:
+
+![imagen](src/main/resources/imagenesReadMe/17.jpg)
+
+Luego debemos subir el .jar y el archivo de application.properties de la aplicacion a la maquina virtual, para eso vamos a usar una consola y usamos el siguiente comando:
+
+
+Una vez ya tenemos el .jar en la maquina, solo debemos ejecutarlo, para que la aplicacion comienze a correr.
+
+![imagen](src/main/resources/imagenesReadMe/21.jpg)
+
+![imagen](src/main/resources/imagenesReadMe/22.jpg)
+
+![imagen](src/main/resources/imagenesReadMe/23.jpg)
+
+Si es necesario (en mi caso lo fue) debemos ir al security group de la instancia de AWS que estamos utilizando y debemos ajustar las reglas de entrada para que permita navegar correctamente por el servidor.
+
+Una vez hecho eso ya la aplicacion quedo correctamente desplegada, ademas esta ya quedo conectada a la base de datos gracias al archivo de application.properties
+
+### Despliegue de la Base de Datos
+
+Debemos crear una instancia en AWS. Una vez ya tengamos esto vamos a acceder a la maquina virtual, para hacerlo yo use PuTTy.
+
+Dentro de la maquina virtual vamos a instalar MySQL:
+
+![imagen](src/main/resources/imagenesReadMe/1.jpg)
+
+![imagen](src/main/resources/imagenesReadMe/2.jpg)
+
+Luego debemos iniciar y habilitar el servicio:
+
+![imagen](src/main/resources/imagenesReadMe/3.jpg)
+
+Luego realizamos toda la configuracion lo que incluye crear una nueva clave entre otras cosas:
+
+![imagen](src/main/resources/imagenesReadMe/4.jpg)
+
+Si es necesario (en mi caso lo fue) debemos ir al security group de la instancia de AWS que estamos utilizando y debemos ajustar las reglas de entrada para que permita navegar correctamente por el servidor.
+
+Una vez hecho eso ya la base de datos quedo correctamente desplegada.
+
+![imagen](src/main/resources/imagenesReadMe/5.jpg)
+
 ### Imagenes del front-back-database ya desplegados y funcionando
 
 A continuacion se encuentran capturas del funcionamiento de la aplicacion ya desplegada:
 
+![imagen](src/main/resources/imagenesReadMe/7.jpg)
+
+![imagen](src/main/resources/imagenesReadMe/8.jpg)
+
+![imagen](src/main/resources/imagenesReadMe/9.jpg)
+
+![imagen](src/main/resources/imagenesReadMe/10.jpg)
 
 ### Video del Despliegue en AWS
 
